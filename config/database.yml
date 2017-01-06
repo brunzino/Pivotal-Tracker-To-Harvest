@@ -55,3 +55,4 @@ test:
 production:
   <<: *default
   database: PivotalTrackerToHarvest_production
+  socket: /var/run/mysqld/mysqld.sock  
