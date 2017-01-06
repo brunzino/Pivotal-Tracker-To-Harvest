@@ -13,13 +13,16 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password:
+  username: <%= Rails.application.secrets.database_username %> 
+  password: <%= Rails.application.secrets.database_password %>
   socket: /tmp/mysql.sock
 
 development:
   <<: *default
   database: PivotalTrackerToHarvest_development
+  username: "PT_TO_H"
+  password: "PT_TO_H"
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,6 +30,8 @@ development:
 test:
   <<: *default
   database: PivotalTrackerToHarvest_test
+  username: "PT_TO_H"
+  password: "PT_TO_H"
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,5 +55,3 @@ test:
 production:
   <<: *default
   database: PivotalTrackerToHarvest_production
-  username: PivotalTrackerToHarvest
-  password: <%= ENV['PIVOTALTRACKERTOHARVEST_DATABASE_PASSWORD'] %>
