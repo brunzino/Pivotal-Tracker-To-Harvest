@@ -16,3 +16,5 @@
 /tmp
 
 deploy.rb
+
+/lib/shared/pt_to_h_secrets.rb
