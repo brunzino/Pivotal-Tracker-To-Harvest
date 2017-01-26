@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module PivotalTrackerToHarvest
   class Application < Rails::Application
 
-    config.shared_path = Rails.root.join("..", "shared")
+    config.shared_path = Rails.root.join("lib", "shared")
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
