@@ -22,10 +22,10 @@ describe PagesController, :type => :controller do
 
 	describe "Receving request from Pivotal Tracker" do 
 
-		let(:json_request_data) {{}}
+		let(:json_params) {{"occurred_at" => 1382568826000}}
 
 		it "finds its data from the request" do 
-
+			post :accept_request, json_params, format: :json
 		end	
 
 	end

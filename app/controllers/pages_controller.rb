@@ -4,7 +4,8 @@ class PagesController < ApplicationController
 	end
 
 	def accept_request
-		return 
+		puts "Occurred at #{params[:occurred_at]}"
+		redirect_to :action => :welcome
 	end
 	
 end
